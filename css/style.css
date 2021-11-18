@@ -9,6 +9,7 @@
   --logo-color: #000000;
   --border-work-color: #eeeeee;
   --svg-color: #afb1b8;
+  --animation-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -117,6 +118,8 @@ button {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms var(--animation-cubic-bezier);
 }
 .current {
   color: var(--hover-color);
@@ -161,6 +164,8 @@ button {
   display: inline-block;
 
   color: var(--text-color);
+
+  transition: color 250ms var(--animation-cubic-bezier);
 }
 
 .address-icon {
@@ -235,6 +240,12 @@ button {
   line-height: 1.87;
   letter-spacing: 0.06em;
   cursor: pointer;
+
+  transition: transform 250ms var(--animation-cubic-bezier);
+}
+
+.hero-btn:hover {
+  transform: skew(-10deg);
 }
 /* Hero end */
 
@@ -366,6 +377,9 @@ button {
   border-radius: 50%;
 
   fill: var(--svg-color);
+
+  transition: background-color 250ms var(--animation-cubic-bezier),
+    fill 250ms var(--animation-cubic-bezier);
 }
 
 .team-social-box:not(:last-child) {
@@ -400,6 +414,9 @@ button {
   border-radius: 4px;
 
   fill: var(--svg-color);
+
+  transition: background-color 250ms var(--animation-cubic-bezier),
+    fill 250ms var(--animation-cubic-bezier);
 }
 
 .clients-item:not(:last-child) {
@@ -444,7 +461,10 @@ button {
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
+
   cursor: pointer;
+  transition: background-color 250ms var(--animation-cubic-bezier),
+    color 250ms var(--animation-cubic-bezier), box-shadow 250ms var(--animation-cubic-bezier);
 }
 .filter-btn:hover,
 .filter-btn:focus {
@@ -479,6 +499,10 @@ button {
   margin-bottom: 30px;
 }
 
+.work-item--link {
+  overflow: hidden;
+}
+
 .work-overley {
   position: absolute;
   top: 0;
@@ -490,6 +514,11 @@ button {
   padding-left: 24px;
 
   background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+
+  transition: transform 250ms var(--animation-cubic-bezier),
+    opacity 250ms var(--animation-cubic-bezier), box-shadow 250ms var(--animation-cubic-bezier);
 
   opacity: 0;
 }
@@ -506,6 +535,7 @@ button {
 }
 
 .work-item:hover .work-overley {
+  transform: translateY(0);
   opacity: 1;
 }
 
@@ -562,6 +592,8 @@ button {
 .footer-cont {
   color: var(--footer-text-color);
   font-style: normal;
+
+  transition: color 250ms var(--animation-cubic-bezier);
 }
 .footer-cont:hover,
 .footer-cont:focus {
@@ -603,6 +635,8 @@ button {
 
   background: rgba(255, 255, 255, 0.1);
   fill: var(--main-color);
+
+  transition: background-color 250ms var(--animation-cubic-bezier);
 }
 
 .footer-social--link:hover,
@@ -621,6 +655,9 @@ button {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms var(--animation-cubic-bezier);
 }
 
 .backdrop-hidden {
@@ -628,22 +665,31 @@ button {
   pointer-events: none;
 }
 
+.backdrop-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 528px;
-  height: 581px;
+
+  min-width: 528px;
+  min-height: 581px;
 
   background-color: var(--main-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--animation-cubic-bezier);
 }
 
 .modal-btn {
   display: flex;
+
   margin-left: auto;
   margin-right: 8px;
   margin-top: 8px;
@@ -653,16 +699,20 @@ button {
   padding-left: 6px;
   padding-right: 6px;
 
-  align-items: center;
-
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 
   cursor: pointer;
+  transition: transform 250ms var(--animation-cubic-bezier);
 }
 
 .modal-svg {
   width: 18px;
   height: 18px;
+  /* transform: rotate(180deg); */
+}
+
+.modal-btn:hover {
+  transform: rotate(45deg);
 }
