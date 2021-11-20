@@ -483,12 +483,9 @@ button {
   flex-wrap: wrap;
 }
 .work-item {
-  position: relative;
-
   width: calc((100% - 60px) / 3);
 
   background-color: var(--main-color);
-  border: 1px solid transparent;
 }
 
 .work-item:not(:nth-child(3n)) {
@@ -499,7 +496,8 @@ button {
   margin-bottom: 30px;
 }
 
-.work-item--link {
+.work-inner {
+  position: relative;
   overflow: hidden;
 }
 
@@ -530,7 +528,6 @@ button {
 }
 
 .work-item:hover {
-  border: none;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
