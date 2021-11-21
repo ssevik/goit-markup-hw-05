@@ -161,8 +161,8 @@ button {
 }
 
 .addres-cont {
-  display: inline-block;
-
+  display: flex;
+  align-items: center;
   color: var(--text-color);
 
   transition: color 250ms var(--animation-cubic-bezier);
@@ -574,7 +574,7 @@ button {
 
 .flex {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .footer-address {
